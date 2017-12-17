@@ -1,0 +1,22 @@
+<h1 class="page-header">Dashboard Route</h1>
+<table  class="table table-striped">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let value of userList"> 
+            <td>{{value.username}}</td>
+            <td>{{value.email}}</td>
+         
+            <td>
+            <a [routerLink]="['/edit-user/', value._id]" class="btn btn-primary">Edit user</a>
+
+            <button  (click)="deleteuser(value._id)" class="btn btn-danger">Delete user</button>
+            
+            </td>
+        </tr>
+        </tbody>
+        </table>
